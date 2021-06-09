@@ -1,0 +1,1554 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    overflow-x: hidden;
+}
+
+/*GENÉRICOS*/
+:root{
+    --main_color: #FFB29E;
+    scroll-behavior: smooth;
+}
+h1{
+    font-size: 45px;
+    color: black;
+    font-weight: 500;
+}
+h2{
+    font-size: 38px;
+    color: black;
+    font-weight: 500;
+}
+h3{
+    font-size: 28px;
+    color: black;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+/*NAVEGADOR*/
+#contenedor_navegador_inicio_alto{
+    background-color: white;
+    width: 100%;
+    height: 118px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#navegador{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    max-width: 1080px;
+}
+#navegador .menu{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 630px; /*60%*/
+    font-weight: 500;
+    font-size: 18px;
+}
+#navegador .menu li{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: black;
+    transition-property: color;
+    transition-duration: 0.2s;
+}
+#navegador a#enlace_logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#navegador a:hover{
+    color: var(--main_color);
+}
+
+
+#contenedor_navegador_medio{
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#contenedor_navegador_medio #logo_navegador{
+    width: 80px;
+}
+#contenedor_navegador_medio{
+    box-shadow: 10px 10px 21px rgb(0 0 0 / 3%);
+}
+
+
+#contenedor_navegador_mas_fino{
+    background-color: white;
+    width: 100%;
+    height: 55px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#contenedor_navegador_mas_fino #logo_navegador{
+    width: 65px;
+}
+#contenedor_navegador_mas_fino{
+    box-shadow: 10px 10px 21px rgb(0 0 0 / 3%);
+}
+
+
+
+
+#navegador #menu_hamburguesa{
+    min-width: 22px;
+    height: 16.5px;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+
+.linea{
+    width: 100%;
+    height: 2.5px;
+    background-color: black;
+}
+.linea#segunda{
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+}
+#menu_hamburguesa.cambio_icono .linea#segunda{
+    opacity: 0;
+}
+.linea#primera{
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+#menu_hamburguesa.cambio_icono .linea#primera{
+    transform: translateY(7.35px) rotateZ(45deg);
+}
+.linea#tercera{
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+#menu_hamburguesa.cambio_icono .linea#tercera{
+    transform: translateY(-7.35px) rotateZ(-45deg);
+}
+
+
+/*CONTENEDOR ONDA GRIS*/
+#contenedor_onda_gris #imagen_onda_gris{
+    width: 100vw;
+    margin-top: 3%; /*32px*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: -1;
+}
+/*Cabecera*/
+#cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 128px;
+    /*
+    position: absolute;
+    top: 0;
+    left: 25%;*/
+}
+#cabecera #texto_y_elementos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 537px;
+    margin: 208px 118px 0 0;
+}
+#cabecera #boton_descargar{
+    background-color: var(--main_color);
+    width: 230px;
+    height: 46px;
+    font-weight: 500;
+    font-size: 21px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all;
+    transition-duration: 0.17s;
+    transition-timing-function: ease;
+    cursor: pointer; 
+    top: 0;
+    position: relative;
+}
+#cabecera #boton_descargar:hover{
+    top: -3px;
+    
+}
+#cabecera #hr_y_flecha_scroll{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#cabecera hr{
+    border: none;
+    border-bottom: 1px solid #D1D1D1;
+    width: 564px;
+    margin-top: 104px;
+}
+#cabecera #flecha_scroll{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 51px;
+    top: 0;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-name: rebote;
+    position: relative;
+}
+@keyframes rebote{
+    0%{
+        top: -12px;
+    }
+    100%{
+        top: 0;
+    }
+}
+#cabecera #flecha_scroll #icono_flecha_scroll{
+    padding-top: 6px;
+}
+#cabecera #home_movil{
+    width: 418px;
+}
+#contenedor_fondo_gris{
+    background-color: #F9F9F8;
+    width: 100vw;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+/*Sección "Qué te ofrece JobTÚ"*/
+#seccion_ofrece{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 55px;
+    background-color: #F9F9F8;
+    padding-bottom: 80px;
+}
+#seccion_ofrece .p_letra_pequeña{
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    line-height: 1.45;
+}
+#seccion_ofrece #imagen_empleo_ideal{
+    width: 47%;
+}
+#seccion_ofrece .apartado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1080px;
+    margin-left: 54px;
+}
+#seccion_ofrece .apartado#apartado_empleo_ideal{
+    margin-top: 35px;
+}
+#seccion_ofrece .texto_parrafos{
+    width: 335px;
+}
+#seccion_ofrece .piedra_y_texto_parrafos{
+    display: flex;
+    flex-direction: row;
+}
+#seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos{
+    margin-right: 16px;
+}
+#seccion_ofrece .piedra_y_texto_parrafos#empleo_ideal{
+    /*width: 1080px;*/
+    padding-right: 50px;
+}
+#seccion_ofrece .apartado#apartado_ofertas_reunidas{
+    flex-direction: row-reverse;
+}
+#seccion_ofrece .apartado#apartado_ofertas_reunidas{
+    margin-top: 55px;
+}
+#seccion_ofrece .piedra_y_texto_parrafos#envia_y_actualiza{
+    padding-right: 74px;
+}
+#seccion_ofrece #texto_parrafos_envia_y_actualiza{
+    width: 340px;
+}
+#seccion_ofrece .apartado#apartado_envia_y_actualiza{
+    margin-top: 8px;
+}
+#seccion_ofrece #imagen_envia_y_actualiza{
+    width: 42.5%;
+}
+
+/*CONTENEDOR ONDA BLANCA*/
+#contenedor_onda_blanca #onda_blanca{
+    width: 100vw;
+}
+/*Sección "Cómo funciona JobTÚ"*/
+#seccion_como_funciona{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#seccion_como_funciona .apartado{
+    margin-bottom: 60px;
+    width: 1080px;
+    position: relative;
+}
+#seccion_como_funciona .apartado_txt_derecha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#seccion_como_funciona .imagen_izquierda{
+    width: 50%;
+    position: relative;
+    left: 40px;
+    top: -40px;
+}
+#seccion_como_funciona #imagen_onda_preferencias{
+    position: absolute;
+    z-index: -1;
+    width: 780px;
+}
+#seccion_como_funciona .p_txt_derecha{
+    width: 320px;
+    position: relative;
+    left: 25px;
+    top: 55px;
+}
+#seccion_como_funciona .apartado_txt_izquierda{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#seccion_como_funciona .imagen_derecha{
+    width: 50%;
+    position: relative;
+    left: 75px;
+    top: -40px;
+}
+#seccion_como_funciona #imagen_onda_favoritos{
+    position: absolute;
+    z-index: -1;
+    width: 1000px;
+    right: -160px;
+}
+#seccion_como_funciona .p_txt_izquierda{
+    width: 320px;
+    position: relative;
+    left: 96px;
+    top: 64px;
+}
+#seccion_como_funciona #imagen_onda_contactar{
+    position: absolute;
+    z-index: -1;
+    width: 950px;
+    left: -80px;
+    top: 8px;
+}
+#seccion_como_funciona #contactar .p_txt_derecha{
+    top: 25px;
+}
+#seccion_como_funciona #imagen_onda_sube_o_crea{
+    position: absolute;
+    z-index: -1;
+    width: 800px;
+    right: -5px;
+}
+#seccion_como_funciona #imagen_onda_editar{
+    position: absolute;
+    z-index: -1;
+    width: 1000px;
+    left: -156px;
+    top: -13px;
+}
+/*Sección "Valoraciones"*/
+#seccion_valoraciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0 33px 0;
+}
+#seccion_valoraciones hr{
+    border: none;
+    border-bottom: 1px solid #D1D1D1;
+    width: 100%;
+    display: none;
+}
+#seccion_valoraciones #contenedor_slide_valoracion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#seccion_valoraciones #contenedor_valoracion_total_y_bullets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#seccion_valoraciones #valoracion_total{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 100px 38px 100px;
+}
+#seccion_valoraciones #valoracion_total #foto_valoracion_2{
+    width: 240px;
+}
+#seccion_valoraciones #contenedor_estrellas_nombre_y_texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 55px;
+}
+#seccion_valoraciones #contenedor_estrellas_nombre_y_texto #nombre_valorador{
+    font-weight: 500;
+    margin: 28px 0 8px 0;
+}
+#seccion_valoraciones #contenedor_estrellas_nombre_y_texto p#parrafo_valoracion{
+    width: 365px;
+    font-size: 18px;
+    display: inline-block;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/*CONTENEDOR ONDA GRIS FOOTER*/
+#contenedor_onda_gris_footer{
+    height: 550px;
+    background-color: #F9F9F8;
+}
+#contenedor_onda_gris_footer #onda_gris_footer{
+    width: 100vw;
+}
+/*Footer*/
+#footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9F8;
+    padding-bottom: 40px;
+}
+#footer #botones_descarga{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#footer #botones_descarga a #descarga_google_play, #footer #botones_descarga a #descarga_app_store{
+    transition: all;
+    transition-duration: 0.17s;
+    transition-timing-function: ease;
+    cursor: pointer; 
+    top: 0;
+    position: relative;
+}
+#footer #botones_descarga a:hover #descarga_google_play, #footer #botones_descarga a:hover #descarga_app_store{
+    top: -3px;
+}
+    
+#footer #botones_descarga img{
+    margin: 0 20px;
+}
+#footer hr{
+    border: none;
+    border-bottom: 1px solid #D1D1D1;
+    width: 1080px;
+    margin-top: 70px;
+}
+#footer #logo_e_iconos_RRSS{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 365px;
+}
+#footer #logo_e_iconos_RRSS #iconos_RRSS{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+}
+
+
+/*MEDIA QUERIES*/
+@media (min-width: 1700px){
+    /*CONTENEDOR ONDA GRIS*/
+    #contenedor_onda_gris #imagen_onda_gris{
+        margin-top: -1%;
+    }
+}
+
+@media (max-width: 1400px){
+    /*Navegador*/
+    #navegador{
+        width: 960px;
+    }
+
+    /*CONTENEDOR ONDA GRIS*/
+    /*Cabecera*/
+    #cabecera{
+        padding-top: 83px;
+    }
+    #cabecera #texto_y_elementos{
+        margin: 208px 1px 0 0;
+    }
+    #cabecera hr{
+        width: 530px;
+    }
+    /*Sección "Qué te ofrece JobTÚ"*/
+    #seccion_ofrece .apartado{
+        max-width: 970px;
+    }
+
+    /*CONTENEDOR ONDA BLANCA*/
+    /*Sección "Cómo funciona JobTÚ"*/
+    #seccion_como_funciona .p_txt_izquierda{
+        top: 40px;
+    }
+    #seccion_como_funciona #imagen_onda_favoritos{
+        right: 79px;
+        width: 918px;
+    }
+    #seccion_como_funciona #imagen_onda_editar{
+        left: 68px;
+        top: -19px;
+        width: 961px;
+    }
+    #seccion_como_funciona #imagen_onda_contactar{
+        left: 64px;
+        width: 905px;
+    }
+    #seccion_como_funciona #imagen_onda_sube_o_crea{
+        right: 184px;
+    }
+    /*Sección "Valoraciones"*/
+    #seccion_valoraciones{
+        margin: 0 0 33px 0;
+    }
+    #seccion_valoraciones #valoracion_total{
+        margin: 5px 100px 38px 100px;
+    }
+
+    /*CONTENEDOR ONDA GRIS FOOTER*/
+    #contenedor_onda_gris_footer{
+        height: 458px;
+    }
+    /*Footer*/
+    #footer hr{
+        margin-top: 44px;
+        width: 970px;
+    }
+}
+
+@media (max-width: 1200px){
+    body{
+        font-size: 21px;
+    }
+    /*GENÉRICOS*/
+    h1{
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+    h2{
+        font-size: 34px;
+    }
+    h3{
+        font-size: 24px;
+    }
+    /*Navegador*/
+    #navegador{
+        width: 890px;
+    }
+    #navegador ul{
+        width: 610px;
+        font-size: 17px;
+    }
+
+    /*CONTENEDOR ONDA GRIS*/
+    /*Cabecera*/
+    #cabecera{
+        padding-top: 83px;
+    }
+    #cabecera #texto_y_elementos{
+        margin: 167px 0px 0 0;
+        width: 518px;
+    }
+    #cabecera hr{
+        margin-top: 77px;
+        width: 465px;
+    }
+    #cabecera #home_movil{
+        width: 367px;
+    }
+    /*Sección "Qué te ofrece JobTÚ"*/
+    #seccion_ofrece{
+        padding-top: 43px;
+    }
+    #seccion_ofrece .apartado{
+        max-width: 948px;
+        justify-content: center;
+        margin-left: 0;
+        width: 849px;
+    }
+    #seccion_ofrece .apartado#apartado_ofertas_reunidas{
+        margin-top: 40px;
+    }
+    #seccion_ofrece #ofertas_reunidas .texto_parrafos br{
+        display: none;
+    }
+    #seccion_ofrece #imagen_empleo_ideal{
+        width: 44%;
+    }
+    #seccion_ofrece .texto_parrafos{
+        width: 288px;
+    }
+    #seccion_ofrece .p_letra_pequeña{
+        font-size: 17px;
+        line-height: 1.33;
+        margin-top: 7px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#empleo_ideal{
+        padding-left: 83px;
+        padding-right: 0;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos{
+        margin-right: 16px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos img{
+        width: 90%;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#envia_y_actualiza{
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    #seccion_ofrece #imagen_ofertas_reunidas{
+        width: 62%;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#ofertas_reunidas{
+        width: 300px;
+        margin-right: 30px;
+    }
+    /*Sección "Cómo funciona JobTÚ"*/
+    
+    #seccion_como_funciona .apartado{
+        width: 900px;
+    }
+    #seccion_como_funciona .apartado_txt_derecha#preferencias{
+        margin-top: 30px;
+    }
+    #seccion_como_funciona .p_txt_derecha{
+        line-height: 1.25;
+        width: 291px;
+    }
+    #seccion_como_funciona #imagen_onda_preferencias{
+        width: 678px;
+        top: -7px;
+    }
+    #seccion_como_funciona .apartado_txt_izquierda, #seccion_como_funciona .apartado_txt_derecha{
+        margin-top: 0px;
+    }
+    #seccion_como_funciona .p_txt_izquierda{
+        left: 103px;
+        top: 25px;
+        line-height: 1.25;
+    }
+    #seccion_como_funciona .imagen_derecha{
+        left: 24px;
+    }
+    #seccion_como_funciona #imagen_onda_favoritos{
+        right: 8px;
+        width: 835px;
+        top: -22px;
+    }
+    #seccion_como_funciona #imagen_onda_contactar{
+        width: 747px;
+    }
+    #seccion_como_funciona #imagen_onda_sube_o_crea{
+        width: 668px;
+        right: 147px;
+        top: -3px;
+    }
+    #seccion_como_funciona #imagen_onda_editar{
+        width: 796px;
+    }
+    /*Sección "Valoraciones"*/
+    #seccion_valoraciones #valoracion_total{
+        margin: 5px 70px 26px 70px;
+    }
+    #seccion_valoraciones #valoracion_total #foto_valoracion_2{
+        width: 215px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto #nombre_valorador{
+        font-size: 20px;
+        margin: 23px 0 8px 0;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto img{
+        width: 117px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto p#parrafo_valoracion{
+        font-size: 17px;
+        line-height: 1.33;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion #contenedor_valoracion_total_y_bullets #bullets img{
+        width: 80px;
+    }
+    /*CONTENEDOR ONDA GRIS FOOTER*/
+    #contenedor_onda_gris_footer{
+        height: 418px;
+    }
+    /*Footer*/
+    #footer hr{
+        width: 890px;
+    }
+    #footer #botones_descarga img{
+        margin: 0 12px;
+    }
+    #footer #botones_descarga #descarga_google_play{
+        height: 54px;
+    }
+    #footer #botones_descarga #descarga_app_store{
+        height: 57.5px;
+    }
+    #footer #logo_e_iconos_RRSS #logo_jobtu_footer{
+        width: 93px;
+    }
+    #footer #logo_e_iconos_RRSS{
+        width: 325px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS{
+        width: 146px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS img{
+        width: 38px;
+    }
+}
+
+    @media (max-width: 992px){
+    body{
+        font-size: 18px;
+    }
+        /*GENÉRICOS*/
+    h1{
+        font-size: 31px;
+        margin-bottom: 20px;
+        width: 409px;
+    }
+    h2{
+        font-size: 27px;
+    }
+    h3{
+        font-size: 19px;
+    }
+    /*Navegador*/
+    #navegador{
+        width: 661px;
+    }
+    #navegador ul{
+        width: 532px;
+        font-size: 15px;
+    }
+    #navegador .menu{
+        width: 566px;
+        font-size: 16.5px;
+    }
+
+    /*CONTENEDOR ONDA GRIS*/
+    #contenedor_onda_gris #imagen_onda_gris{
+        margin-top: 8%;
+    }
+    /*Cabecera*/
+    #cabecera{
+        padding-top: 83px;
+    }
+    #cabecera #boton_descargar{
+        width: 188px;
+        height: 40px;
+        font-size: 17px;
+    }
+    #cabecera #texto_y_elementos{
+        margin: 167px 0 0 0;
+        width: 362px;
+    }
+    #cabecera hr{
+        margin-top: 53px;
+        width: 342px;
+    }
+    #cabecera #home_movil{
+        width: 296px;
+        padding-left: 15px;
+    }
+    #cabecera #flecha_scroll{
+        width: 41px;
+        height: 41px;
+        margin-top: 32px;
+    }
+    /*Sección "Qué te ofrece Jobtú"*/
+    #seccion_ofrece{
+        padding-top: 30px;
+    }
+    #seccion_ofrece .apartado{
+        width: 700px;
+    }
+    #seccion_ofrece .p_letra_pequeña{
+        font-size: 15px;
+        width: 244px;
+    }
+    #seccion_ofrece #apartado_ofertas_reunidas .p_letra_pequeña{
+        width: 210px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#empleo_ideal{
+        padding-left: 48px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos img{
+        width: 78%;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos{
+        margin-right: 8px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#ofertas_reunidas{
+        width: 271px;
+        margin-right: -16px;
+    }
+    #seccion_ofrece #imagen_ofertas_reunidas{
+        width: 58%;
+    }
+    #seccion_ofrece .apartado#apartado_ofertas_reunidas{
+        margin-top: 20px;
+    }
+    #seccion_ofrece .apartado#apartado_ofertas_reunidas .texto_parrafos{
+        width: 235px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#envia_y_actualiza{
+        padding-left: 41px;
+        padding-right: 0;
+    }
+    #seccion_ofrece #imagen_envia_y_actualiza{
+        width: 41.5%;
+    }
+    #seccion_ofrece #texto_parrafos_envia_y_actualiza{
+        width: 289px;
+    }
+    #seccion_ofrece .apartado#apartado_empleo_ideal{
+        margin-top: 17px;
+    }
+    #seccion_ofrece .apartado#apartado_envia_y_actualiza{
+        margin-top: 0;
+    }
+    /*Sección "Cómo funciona"*/
+    #seccion_como_funciona .apartado{
+        width: 716px;
+        margin-bottom: 20px;
+    }
+    #seccion_como_funciona .p{
+        font-size: 18px;
+    }
+    #seccion_como_funciona .p_txt_derecha{
+        width: 250px;
+        top: 56px;
+    }
+    #seccion_como_funciona #imagen_onda_preferencias{
+        width: 542px;
+        top: -12px;
+        left: 63px;
+    }
+    #seccion_como_funciona #imagen_onda_favoritos{
+        right: 37px;
+        width: 651px;
+        top: -6px;
+    }
+    #seccion_como_funciona .p_txt_izquierda{
+        width: 286px;
+        left: 98px;
+        top: 18px;
+    }
+    #seccion_como_funciona .apartado_txt_derecha#preferencias{
+        margin-top: 30px;
+    }
+    #seccion_como_funciona #contactar .p_txt_derecha{
+        top: 43px;
+    }
+    #seccion_como_funciona #imagen_onda_contactar{
+        width: 594px;
+    }
+    #seccion_como_funciona .imagen_izquierda{
+        top: -13px;
+        top: -4px;
+    }
+    #seccion_como_funciona #imagen_onda_contactar{
+        top: 38px;
+        left: 38px;
+    }
+    #seccion_como_funciona #imagen_onda_sube_o_crea{
+        width: 489px;
+        right: 184px;
+        top: 24px;
+    }
+    #seccion_como_funciona #imagen_onda_editar{
+        width: 666px;
+        top: 8px;
+        left: 31px;
+    }
+    #seccion_como_funciona .imagen_derecha{
+        top: -35px;
+    }
+    /*Sección "Valoraciones"*/
+    #seccion_valoraciones{
+        margin: 56px 0 33px 0;
+    }
+    #seccion_valoraciones h2{
+        margin-bottom: 21px;
+    }
+    #seccion_valoraciones #valoracion_total{
+        margin: 5px 48px 11px 48px;
+    }
+    #seccion_valoraciones #valoracion_total #foto_valoracion_2{
+        width: 188px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto #nombre_valorador{
+        font-size: 19px;
+        margin: 19px 0 6px 0;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto{
+        padding-left: 41px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto img{
+        width: 100px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto p#parrafo_valoracion{
+        font-size: 15px;
+        width: 306px;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion #contenedor_valoracion_total_y_bullets #bullets img{
+        width: 74px;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion .flecha_valoraciones{
+        width: 10px;
+    }
+    /*CONTENEDOR ONDA GRIS FOOTER*/
+    #contenedor_onda_gris_footer{
+        height: 353px;
+    }
+    /*Footer*/
+    #footer{
+        padding-bottom: 0;
+    }
+    #footer hr{
+        width: 661px;
+        margin-top: 31px;
+    }
+    #footer #botones_descarga img{
+        margin: 0 8px;
+    }
+    #footer #botones_descarga #descarga_google_play{
+        height: 43px;
+    }
+    #footer #botones_descarga #descarga_app_store{
+        height: 46.5px;
+    }
+    #footer #logo_e_iconos_RRSS #logo_jobtu_footer{
+        width: 80px;
+    }
+
+    #footer #logo_e_iconos_RRSS{
+        width: 244px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS{
+        width: 128px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS img{
+        width: 34px;
+    }
+}
+    
+@media (max-width: 768px){
+    body{
+        font-size: 16px;
+    }
+    /*GENÉRICOS*/
+    h1{
+        font-size: 28px;
+        margin-bottom: 16px;
+        width: 365px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    /*Navegador*/
+    #contenedor_navegador_mas_fino{
+        display: flex;
+    }
+    #contenedor_navegador_medio{
+        display: none;
+    }
+    #navegador{
+        width: 536px;
+    }
+    #navegador .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 100vw;
+        font-size: 14px;
+        z-index: 2;
+        background-color: white;
+        padding: 55px 20px 20px 20px;
+        margin: 0;
+        /*box-shadow: 10px 10px 21px rgb(0 0 0 / 3%);*/
+        transition: left;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.24, 0.74, 0.48, 0.96)
+    }
+    #navegador .menu.aparece{
+        left: 0vw;
+    }
+    #navegador #menu_hamburguesa{
+        display: flex;
+        z-index: 3;
+    }
+    #navegador .menu li{
+        margin-bottom: 28px;
+        font-size: 16px;
+    }
+
+     /*CONTENEDOR ONDA GRIS*/
+     #contenedor_onda_gris #imagen_onda_gris{
+        margin-top: 4.5%;
+    }
+    /*Cabecera*/
+    #cabecera{
+        padding-top: 79px;
+    }
+    #cabecera #boton_descargar{
+        width: 166px;
+        height: 35px;
+        font-size: 16px;
+    }
+    #cabecera #texto_y_elementos{
+        margin: 86px 19px 0 0;
+        width: 318px;
+    }
+    #cabecera hr{
+        margin: 45px 0 10px 0;
+        width: 295px;
+    }
+    #cabecera #home_movil{
+        width: 197px;
+        padding-left: 0;
+    }
+    #cabecera #flecha_scroll{
+        width: 36px;
+        height: 36px;
+        margin-top: 39px;
+    }
+    #cabecera #flecha_scroll #icono_flecha_scroll{
+        width: 16px;
+    }
+    /*Sección "Qué te ofrece Jobtú"*/
+    #seccion_ofrece{
+        padding-top: 20px;
+        padding-bottom: 60px;
+    }
+    #seccion_ofrece .apartado{
+        width: 536px;
+    }
+    #seccion_ofrece .texto_parrafos{
+        width: 201px;
+    }
+    #seccion_ofrece #texto_parrafos_envia_y_actualiza{
+        width: 233px;
+    }
+    #seccion_ofrece .p_letra_pequeña{
+        font-size: 13px;
+        width: 221px;
+        line-height: 1.36;
+        margin-top: 4.5px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos img{
+        width: 73%;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos .piedra_parrafos{
+        margin-right: 5px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#empleo_ideal{
+        padding-left: 42px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#envia_y_actualiza{
+        padding-left: 32px;
+    }
+    #seccion_ofrece #imagen_ofertas_reunidas{
+        width: 57%;
+    }
+    #seccion_ofrece .apartado#apartado_ofertas_reunidas{
+        margin-top: 13px;
+    }
+    #seccion_ofrece #apartado_ofertas_reunidas .p_letra_pequeña{
+        width: 183px;
+    }
+    /*Sección "Cómo funciona"*/
+    #seccion_como_funciona .apartado{
+        width: 536px;
+    }
+    #seccion_como_funciona .p_txt_derecha{
+        width: 222px;
+        top: 37px;
+        left: -5px;
+    }
+    #seccion_como_funciona .p_txt_izquierda{
+        left: 64px;
+        top: 3px;
+    }
+    #seccion_como_funciona .imagen_izquierda{
+        top: -13px;
+        width: 46%;
+        left: 0;
+    }
+    #seccion_como_funciona .imagen_derecha{
+        width: 46%;
+        left: -36px;
+    }
+    #seccion_como_funciona #imagen_onda_preferencias{
+        width: 369px;
+        top: -12px;
+        left: 76px;
+    }
+    #seccion_como_funciona #imagen_onda_favoritos{
+        right: 33px;
+        width: 443px;
+        top: -17px;
+    }
+    #seccion_como_funciona .apartado_txt_derecha#preferencias{
+        margin-top: 23px;
+    }
+    #seccion_como_funciona #contactar .p_txt_derecha{
+        top: 14px;
+    }
+    #seccion_como_funciona #imagen_onda_contactar{
+        width: 407px;
+        top: -1px;
+        left: 53px;
+    }
+    #seccion_como_funciona #imagen_onda_sube_o_crea{
+        width: 354px;
+        right: 104px;
+        top: 1px;
+    }
+    #seccion_como_funciona #imagen_onda_editar{
+        width: 448px;
+        top: -8px;
+        left: 52px;
+    }
+    /*Sección "Valoraciones"*/
+    #seccion_valoraciones{
+        margin: 20px 0 33px 0;
+    }
+    #seccion_valoraciones h2{
+        margin-bottom: 18px;
+    }
+    #seccion_valoraciones #valoracion_total{
+        margin: 5px 42px 11px 42px;
+    }
+    #seccion_valoraciones #valoracion_total #foto_valoracion_2{
+        width: 139px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto{
+        line-height: 1.26;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto #nombre_valorador{
+        font-size: 17px;
+        margin: 13px 0 2px 0;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto{
+        padding-left: 28px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto img{
+        width: 95px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto p#parrafo_valoracion{
+        font-size: 12.5px;
+        width: 217px;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion #contenedor_valoracion_total_y_bullets #bullets img{
+        width: 66px;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion .flecha_valoraciones{
+        width: 8px;
+    }
+    #seccion_valoraciones br{
+        display: none;
+    }
+
+    /*CONTENEDOR ONDA GRIS FOOTER*/
+    #contenedor_onda_gris_footer{
+        height: 274px;
+    }
+    /*Footer*/
+    #footer{
+        padding-bottom: 22px;
+    }
+    #footer hr{
+        width: 490px;
+        margin-top: 23px;
+    }
+    #footer #botones_descarga img{
+        margin: 0 8px;
+    }
+    #footer #botones_descarga #descarga_google_play{
+        height: 43px;
+    }
+    #footer #botones_descarga #descarga_app_store{
+        height: 46.5px;
+    }
+    #footer #logo_e_iconos_RRSS{
+        margin-top: 16px;
+    }
+    #footer #logo_e_iconos_RRSS #logo_jobtu_footer{
+        width: 65px;
+    }
+
+    #footer #logo_e_iconos_RRSS{
+        width: 235px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS{
+        width: 115px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS img{
+        width: 30px;
+    }
+}
+
+@media (max-width: 576px){
+    body{
+        font-size: 16px;
+    }
+        /*GENÉRICOS*/
+    h1{
+        font-size: 25px;
+        /*margin-bottom: 16px;*/
+        width: 86%;
+        text-align: center;
+        margin-top: 8px;
+    }
+    h2{
+        font-size: 21px;
+        margin-top: 21px;
+    }
+    h3{
+        font-size: 16.5px;
+        margin: 14px 0 12px 0;
+        width: 80%;
+        text-align: center;
+    }
+    /*Navegador*/
+    #navegador{
+        width: 100%;
+        padding: 0 20px;
+    }
+     /*CONTENEDOR ONDA GRIS*/
+     #contenedor_onda_gris #imagen_onda_gris{
+        margin-top: 53px;
+    }
+    /*Cabecera*/
+    #cabecera{
+        flex-direction: column-reverse;
+        padding: 0 20px;
+    }
+    #cabecera #texto_y_elementos{
+        margin: -16px 0 0 0;
+        width: 100%;
+        align-items: center;
+    }
+    #cabecera #hr_y_flecha_scroll{
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+    }
+    #cabecera #boton_descargar{
+        width: 160px;
+        height: 38px;
+        font-size: 16px;
+    }
+    #cabecera hr{
+        margin: 45px 0 20px 0;
+        width: 100%;
+    }
+    #cabecera #home_movil{
+        width: 70%;
+        margin-top: 58px;
+    }
+    /*Sección "Qué te ofrece Jobtú"*/
+    #seccion_ofrece{
+        padding: 4px 20px 43px 20px;
+    }
+    
+    #seccion_ofrece .apartado{
+        flex-direction: column;
+        width: 100%;
+    }
+    #seccion_ofrece #imagen_empleo_ideal{
+        width: 74%;
+    }
+    #seccion_ofrece .apartado#apartado_empleo_ideal{
+        margin-top: 9px;
+    }
+    #seccion_ofrece .texto_parrafos{
+        width: 75%;
+    }
+    #seccion_ofrece .texto_parrafos br{
+        display: none;
+    }
+    #seccion_ofrece #texto_parrafos_envia_y_actualiza{
+        width: 75%;
+    }
+    #seccion_ofrece #imagen_envia_y_actualiza{
+        width: 64.5%;
+    }
+    #seccion_ofrece .p_letra_pequeña{
+        width: 100%;
+        font-size: 13.5px;
+        margin-top: 2px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos{
+        justify-content: center;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#empleo_ideal{
+        padding-left: 0;
+        margin-top: 24px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#envia_y_actualiza{
+        padding-left: 0;
+        margin-top: 16px;
+    }
+    #seccion_ofrece .piedra_y_texto_parrafos#ofertas_reunidas{
+        width: 100%;
+        margin-top: 11px;
+    }
+    #seccion_ofrece #imagen_ofertas_reunidas{
+        width: 96%;
+    }
+    #seccion_ofrece .apartado#apartado_ofertas_reunidas{
+        margin-top: 40px;
+        flex-direction: column;
+    }
+    #seccion_ofrece .apartado#apartado_ofertas_reunidas .texto_parrafos{
+        width: 75%;
+    }
+    #seccion_ofrece #apartado_ofertas_reunidas .p_letra_pequeña{
+        width: 100%;
+    }
+    #seccion_ofrece .apartado#apartado_envia_y_actualiza{
+        margin-top: 40px;
+    }
+    /*Sección "Cómo funciona"*/
+    #seccion_como_funciona .apartado{
+        width: 100%;
+        margin-bottom: -6px;
+    }
+    #seccion_como_funciona .apartado#editar{
+        margin-top: 10px;
+    }
+    #seccion_como_funciona .apartado_txt_derecha{
+        flex-direction: column;
+    }
+    #seccion_como_funciona .apartado_txt_izquierda{
+        flex-direction: column;
+    }
+    #seccion_como_funciona br{
+        display: none;
+    }
+    #seccion_como_funciona .p_txt_derecha{
+        width: 67%;
+        position: revert;
+        margin-top: 0;
+    }
+    #seccion_como_funciona .p_txt_izquierda{
+        width: 67%;
+        position: revert;
+        margin-top: 0;
+    }
+    #seccion_como_funciona .imagen_izquierda{
+        top: 11px;
+        width: 65%;
+    }
+    #seccion_como_funciona .imagen_derecha{
+        top: 11px;
+        width: 65%;
+        left: 0;
+    }
+    #seccion_como_funciona #imagen_onda_preferencias{
+        width: 75%;
+        top: 29px;
+        left: 41px;
+    }
+    #seccion_como_funciona #imagen_onda_favoritos{
+        right: 50px;
+        width: 75%;
+        top: 97px;
+    }
+    #seccion_como_funciona .apartado_txt_derecha#preferencias{
+        margin-top: -21px;
+    }
+    #seccion_como_funciona #imagen_onda_contactar{
+        width: 75%;
+        top: 65px;
+    }
+    #seccion_como_funciona #imagen_onda_sube_o_crea{
+        width: 69%;
+        right: 75px;
+        top: 54px;
+    }
+    #seccion_como_funciona #imagen_onda_editar{
+        width: 75%;
+        top: 78px;
+    }
+    /*Sección "Valoraciones"*/
+    #seccion_valoraciones{
+        padding: 0 20px;
+    }
+    #seccion_valoraciones hr{
+        display: flex;
+        margin: 22px 0 23px 0;
+        width: 100%;
+    }
+    #seccion_valoraciones br{
+        display: none;
+    }
+    #seccion_valoraciones h2{
+        margin-bottom: 13px;
+    }
+    #seccion_valoraciones #valoracion_total{
+        margin: 5px 0 11px 0;
+        flex-direction: column;
+    }
+    #seccion_valoraciones #valoracion_total #foto_valoracion_2{
+        width: 105px;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion{
+        width: 100%;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto #nombre_valorador{
+        font-size: 16px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto{
+        padding-left: 0;
+        align-items: center;
+        margin-top: 15px;
+    }
+    #seccion_valoraciones #contenedor_estrellas_nombre_y_texto p#parrafo_valoracion{
+        font-size: 13.5px;
+        line-height: 1.4;
+        width: 75%;
+        margin-left: 12px;
+    }
+    #seccion_valoraciones #contenedor_slide_valoracion .flecha_valoraciones{
+        margin-top: 155px;
+    }
+    /*CONTENEDOR ONDA GRIS FOOTER*/
+    #contenedor_onda_gris_footer{
+        height: 233px;
+    }
+    /*Footer*/
+    #footer{
+        padding: 0 20px 20px 20px;
+    }
+    #footer hr{
+        width: 100%;
+        margin-top: 20px;
+    }
+    #footer #botones_descarga #descarga_google_play{
+        height: 35px;
+    }
+    #footer #botones_descarga #descarga_app_store{
+        height: 37.3px;
+    }
+    #footer #logo_e_iconos_RRSS{
+        margin-top: 16px;
+    }
+    #footer #logo_e_iconos_RRSS #logo_jobtu_footer{
+        width: 65px;
+    }
+    #footer #logo_e_iconos_RRSS{
+        margin-top: 12px;
+        width: 232px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS{
+        width: 114px;
+    }
+    #footer #logo_e_iconos_RRSS #iconos_RRSS img{
+        width: 31px;
+    }
+}
